@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block text %}
+{{ super() }}
+Привет! <br><br>Этот опрос создан с целью проверить вашу чувствительность к цветам и оттенкам одного цвета.<br><br>
+Вам будут показаны два цвета.<br>
+Определите, являются ли они разными, или цвет один и тот же.<br><br>
+Например:
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+<div class="container">
+    <div class="row" align="center">
+        <div class="col-md-12"><br>Цвета снизу отличаются?<br><br></div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" style="height: 200px;"></div>
+        <div class="col-md-2 rounded-circle" style="background-color: rgb(115, 155, 206); height: 180px;"></div>
+        <div class="col-md-2" style="height: 200px;"></div>
+        <div class="col-md-2 rounded-circle" style="background-color: rgb(115, 155, 206); height: 180px;"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12" style="background-color:none">
+            Нет, один и тот же цвет.<br><br>
+            Сравним другие цвета снизу:<br><br>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3" style="height: 200px;"></div>
+        <div class="col-md-2 rounded-circle" style="background-color: rgb(120, 120, 206); height: 180px;"></div>
+        <div class="col-md-2" style="height: 200px;"></div>
+        <div class="col-md-2 rounded-circle" style="background-color: rgb(115, 155, 206); height: 180px;"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">уже два разных.</div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"><br><br>
+        После прохождения опроса вам высветятся ваши ответы с метками <br> "верно/не верно".<br>
+            Вы сможете перейти в раздел
+            статистики и посмотреть на чужие ответы.<br><br>
+            Приступим?<br><br>
+        <a class="btn btn-outline-dark btn-lg" href="http://127.0.0.1:5000/ank" role="button">Начать</a>
+    </div>
+
+</div>
+{% endblock %}
