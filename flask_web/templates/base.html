@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Анкета</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta charset="utf-8">
+	<meta name="description" content="Анкета">
+	<style>
+		body {
+			background:url(https://img.freepik.com/free-vector/topographic-contour-lines-map-seamless-pattern_1284-52862.jpg?size=338&ext=jpg&ga=GA1.2.1077217722.1633996800)
+			}
+
+	</style>
+	<!-- Bootstrap Core CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container" style="background: rgba(300, 300, 300, 0.6)">
+				<div class="navbar-header">
+					<a href="http://127.0.0.1:5000/" class="btn btn-outline-dark btn-lg">Начальная страница</a>
+				</div>
+				<div> <!--class="collapse navbar-collapse" id="navbarSupport"-->
+					<ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+
+						<li class="nav-item active">
+								<a class="btn btn-outline-dark btn-lg" href="/ank">Анкета</a>
+							</li>
+							<li class="nav-item active">
+								<a class="btn btn-outline-dark btn-lg" href="/res">Статистика</a>
+							</li>
+  					</ul>
+				</div>
+			</div>
+
+	</nav>
+	<header>
+			<div class="container" style="background: rgba(300, 300, 300, 0.6)">
+				<div class="row">
+					<div class="col-md-12" style="height: 30px"></div>
+					<div class="col-md-12">
+						<h3 style="text-align:center">
+							{% block text %}
+							{{sent}}
+							{% endblock %}
+							{% block content %}
+							{{content}}
+							{% endblock %}
+
+						</h3>
+
+	            </div>
+	        </div>
+		</div>
+	</header>
+
+	<!-- штука для проверки полей -->
+	<script>
+		(function() {
+			'use strict';
+			window.addEventListener('load', function() {
+				var forms = document.getElementsByClassName('needs-validation');
+				var validation = Array.prototype.filter.call(forms, function(form) {
+					form.addEventListener('submit', function(event) {
+						if (form.checkValidity() === false) {
+							event.preventDefault();
+							event.stopPropagation();
+						}
+						form.classList.add('was-validated');
+					}, false);
+				});
+			}, false);
+		})();
+	</script>
+
+
+</body>
+</html>
